@@ -14,27 +14,27 @@ novj
 novjccomp
 proxyarp
 
-<% if @dns_servers and ! @dns_servers.empty? %>
-<% @dns_servers.each do |dns_server| %>
+<% if @dns_servers and ! @dns_servers.empty? -%>
+<% @dns_servers.each do |dns_server| -%>
 <% if dns_server != '' %>ms-dns <%= dns_server %><% end %>
-<% end %>
-<% else %>
+<% end -%>
+<% else -%>
 #ms-dns 10.0.0.1
 #ms-dns 10.0.0.2
-<% end %>
+<% end -%>
 
-<% if @nmb_servers and ! @nmb_servers.empty? %>
-<% @nmb_servers.each do |nmb_server| %>
+<% if @nmb_servers and ! @nmb_servers.empty? -%>
+<% @nmb_servers.each do |nmb_server| -%>
 <% if nmb_server != '' %>ms-wins <%= nmb_server %><% end %>
-<% end %>
-<% else %>
+<% end -%>
+<% else -%>
 #ms-wins 10.0.0.3
 #ms-wins 10.0.0.4
-<% end %>
+<% end -%>
 
-<% if @pptpd_options and ! @pptpd_options.empty? %>
-  <% @pptpd_options.each do |line| %>
-    <%= line %>
-  <% end -%>
+<% if @pptpd_options and ! @pptpd_options.empty? -%>
+<% @pptpd_options.each do |line| -%>
+<%= line %>
+<% end -%>
 <% end -%>
 
