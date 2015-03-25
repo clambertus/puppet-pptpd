@@ -32,7 +32,9 @@ proxyarp
 #ms-wins 10.0.0.4
 <% end %>
 
-<% @pptpd_options.each do |line| -%>
-  <%= line %>
+<% if @pptpd_options and ! @pptpd_options.empty? %>
+  <% @pptpd_options.each do |line| %>
+    <%= line %>
+  <% end -%>
 <% end -%>
 
