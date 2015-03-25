@@ -1,9 +1,18 @@
 name pptpd
+
 refuse-pap
 refuse-chap
 refuse-mschap
+
 require-mschap-v2
 require-mppe-128
+
+lock
+nobsdcomp 
+nologfd
+novj
+novjccomp
+proxyarp
 
 <% if @dns_servers and ! @dns_servers.empty? %>
 <% @dns_servers.each do |dns_server| %>
@@ -23,9 +32,7 @@ require-mppe-128
 #ms-wins 10.0.0.4
 <% end %>
 
-proxyarp
-lock
-nobsdcomp 
-novj
-novjccomp
-nologfd
+<% @pptpd_options.each do |line| -%>
+  <%= line %>
+<% end -%>
+
