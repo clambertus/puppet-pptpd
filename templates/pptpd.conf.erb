@@ -2,10 +2,15 @@
 option <%= @option %>
 localip <%= @localip %>
 remoteip <%= @remoteip %>
-stimeout <%= @stimeout %>
-connections <%= @connections %>
-pidfile <%= @pidfile %>
-speed <%= @speed %>
+
+<% if @stimeout %>stimeout <%= @stimeout %>
+<% end -%>
+<% if @connections %>connections <%= @connections %>
+<% end -%>
+<% if @pidfile %>pidfile <%= @pidfile %>
+<% end -%>
+<% if @speed %>speed <%= @speed %>
+<% end -%>
 <% if @logwtmp %>logwtmp
 <% end -%>
 <% if @debug %>debug
